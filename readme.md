@@ -1,4 +1,4 @@
-# YAMM :: YetAnother Meta Module # 
+# YAMM :: Yet Another Meta Module # 
 
 ## English ##
 
