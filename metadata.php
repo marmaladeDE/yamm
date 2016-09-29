@@ -27,18 +27,10 @@ $aModule = array(
     'url'         => 'http://www.marmalade.de',
     'email'       => 'support@marmalade.de',
     'extend'      => array(
-        'oxshopcontrol'
-            => 'marm/yamm/ma_yamm_shopcontrol',
+        'oxshopcontrol' => 'marm/yamm/ma_yamm_shopcontrol',
     ),
     'files'       => array(
-        'ma_yamm_shopcontrol'
-            => 'marm/yamm/src/oxid/core/ma_yamm_shopcontrol.php',
-        'Marm\\Yamm\\DIC'
-            => 'marm/yamm/src/Yamm/DIC.php',
-        'Pimple'
-            => 'marm/yamm/lib/Pimple.php',
-        'Kore\DataObject\DataObject'
-            => 'marm/yamm/lib/DataObject.php',
+        'ma_yamm_shopcontrol' => 'marm/yamm/src/oxid/core/ma_yamm_shopcontrol.php',
     ),
     'templates'   => array(),
     'blocks'      => array(),
