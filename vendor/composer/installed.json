@@ -1,0 +1,86 @@
+[
+    {
+        "name": "kore/data-object",
+        "version": "1.1",
+        "version_normalized": "1.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/kore/DataObject.git",
+            "reference": "d460aa076b3fd227cc64c66a92b7f769ab0464ce"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/kore/DataObject/zipball/d460aa076b3fd227cc64c66a92b7f769ab0464ce",
+            "reference": "d460aa076b3fd227cc64c66a92b7f769ab0464ce",
+            "shasum": ""
+        },
+        "require-dev": {
+            "pdepend/pdepend": "@stable",
+            "phpmd/phpmd": "@stable",
+            "phpunit/phpunit": "@stable",
+            "sebastian/phpcpd": "@stable",
+            "squizlabs/php_codesniffer": "@stable"
+        },
+        "time": "2014-06-24 08:26:49",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Kore": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "Simple base class for data objects."
+    },
+    {
+        "name": "pimple/pimple",
+        "version": "v3.0.2",
+        "version_normalized": "3.0.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/silexphp/Pimple.git",
+            "reference": "a30f7d6e57565a2e1a316e1baf2a483f788b258a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/silexphp/Pimple/zipball/a30f7d6e57565a2e1a316e1baf2a483f788b258a",
+            "reference": "a30f7d6e57565a2e1a316e1baf2a483f788b258a",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "time": "2015-09-11 15:10:35",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Pimple": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            }
+        ],
+        "description": "Pimple, a simple Dependency Injection Container",
+        "homepage": "http://pimple.sensiolabs.org",
+        "keywords": [
+            "container",
+            "dependency injection"
+        ]
+    }
+]
