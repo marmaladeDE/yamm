@@ -6,3 +6,5 @@ execute_tests:
   script:
     - composer install
     - php vendor/bin/phpunit --coverage-text
+    - php vendor/bin/phpcs --standard=PSR2 src/Yamm/
+    - php vendor/bin/phpmd src/Yamm/ text cleancode,codesize,design
