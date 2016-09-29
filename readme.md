@@ -10,7 +10,7 @@ This meta module provides generally desired functionality, like:
 
 ### DIC Usage ###
 
-The DIC is am extension of [Pimple|http://pimple.sensiolabs.org/] which allows
+The DIC is am extension of [Pimple](http://pimple.sensiolabs.org/) which allows
 service tagging and is integrated with Oxid eSales.
 
 To use the DIC just put a `dic.php` in the root of yourproject and register all
