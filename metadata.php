@@ -6,9 +6,9 @@
  * For contact information please visit http://www.marmalade.de
  *
  * Version:    3.4
- * Author:     Jens Richter <richter@marmalade.de>
  * Author URI: http://www.marmalade.de
  */
+
 /**
  * Metadata version
  */
@@ -27,8 +27,12 @@ $aModule = array(
     'url'         => 'http://www.marmalade.de',
     'email'       => 'support@marmalade.de',
     'extend'      => array(
+        'oxshopcontrol'
+            => 'marm/yamm/ma_yamm_shopcontrol',
     ),
     'files'       => array(
+        'ma_yamm_shopcontrol'
+            => 'marm/yamm/src/oxid/ma_yamm_shopcontrol.php',
         'Marm\\Yamm\\DIC'
             => 'marm/yamm/src/Yamm/DIC.php',
         'Pimple'
@@ -36,12 +40,8 @@ $aModule = array(
         'Kore\DataObject\DataObject'
             => 'marm/yamm/lib/DataObject.php',
     ),
-    'templates'   => array(
-    ),
-    'blocks'      => array(
-    ),
-    'events'      => array(
-    ),
-    'settings'    => array(
-    ),
+    'templates'   => array(),
+    'blocks'      => array(),
+    'events'      => array(),
+    'settings'    => array(),
 );
