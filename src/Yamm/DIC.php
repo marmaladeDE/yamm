@@ -11,8 +11,6 @@
 
 namespace Marm\Yamm;
 
-require_once __DIR__ . '/../../vendor/autoload.php';
-
 /**
  * This DIC is just a DIC wrapper to contain module DICs
  */

@@ -25,6 +25,8 @@ class ma_yamm_shopcontrol extends ma_yamm_shopcontrol_parent
      */
     public function start($sClass = null, $sFunction = null, $aParams = null, $aViewsChain = null)
     {
+        require_once __DIR__ . '/../../../vendor/autoload.php';
+
         $dic = \Marm\Yamm\DIC::getInstance();
         $dic->findOtherModules(\oxRegistry::getConfig()->getConfigParam('sShopDir') . 'modules/');
         oxRegistry::set('yamm_dic', $dic);
