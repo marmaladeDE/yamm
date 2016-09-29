@@ -14,9 +14,11 @@ namespace Marm\Yamm;
 /**
  * This DIC is just a DIC wrapper to contain module DICs
  */
-class DIC extends \Pimple
+class DIC extends \Pimple\Container
 {
     private static $instance;
+
+    private $tags = array();
 
     public static function getInstance()
     {
@@ -38,5 +40,29 @@ class DIC extends \Pimple
         foreach ($dicIncludeFiles as $dicIncludeFile) {
             include $dicIncludeFile;
         }
+    }
+
+    public function tag($serviceName, $tagName)
+    {
+        if (!isset($this->tags[$tagName])) {
+            $this->tags[$tagName] = array();
+        }
+
+        $this->tags[$tagName][] = $serviceName;
+    }
+
+    public function getTagged($tagName)
+    {
+        if (!isset($this->tags[$tagName])) {
+            return array();
+        }
+
+        $dic = $this;
+        return array_map(
+            function ($serviceName) use ($dic) {
+                return $this[$serviceName];
+            },
+            $this->tags[$tagName]
+        );
     }
 }
