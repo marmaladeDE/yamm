@@ -15,6 +15,21 @@ class DICTest extends \PHPUnit_Framework_TestCase
         $this->assertSame($dic['object'], $dic['object']);
     }
 
+    public function testSingleton()
+    {
+        $this->assertSame(
+            DIC::getInstance(),
+            DIC::getInstance()
+        );
+    }
+
+    public function testGetEmptySetOfTaggedServices()
+    {
+        $dic = new DIC();
+
+        $this->assertSame([], $dic->getTagged('unknown:tag'));
+    }
+
     public function testTagService()
     {
         $dic = new DIC();
