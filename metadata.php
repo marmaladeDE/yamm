@@ -32,7 +32,7 @@ $aModule = array(
     ),
     'files'       => array(
         'ma_yamm_shopcontrol'
-            => 'marm/yamm/src/oxid/ma_yamm_shopcontrol.php',
+            => 'marm/yamm/src/oxid/core/ma_yamm_shopcontrol.php',
         'Marm\\Yamm\\DIC'
             => 'marm/yamm/src/Yamm/DIC.php',
         'Pimple'
