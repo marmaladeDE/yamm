@@ -26,4 +26,17 @@ class DIC extends \Pimple
 
         return self::$instance;
     }
+
+    public function findOtherModules($moduleDirectory)
+    {
+        $dicIncludeFiles = array_filter(array_merge(
+            glob($moduleDirectory . '/*/dic.php'),
+            glob($moduleDirectory . '/*/*/dic.php')
+        ));
+
+        $dic = $this;
+        foreach ($dicIncludeFiles as $dicIncludeFile) {
+            include $dicIncludeFile;
+        }
+    }
 }

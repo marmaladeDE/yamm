@@ -25,7 +25,9 @@ class ma_yamm_shopcontrol extends ma_yamm_shopcontrol_parent
      */
     public function start($sClass = null, $sFunction = null, $aParams = null, $aViewsChain = null)
     {
-        oxRegistry::set('yamm_dic', \Marm\Yamm\DIC::getInstance());
+        $dic = \Marm\Yamm\DIC::getInstance();
+        $dic->findOtherModules(\oxRegistry::getConfig()->getConfigParam('sShopDir') . 'modules/');
+        oxRegistry::set('yamm_dic', $dic);
 
         parent::start($sClass, $sFunction, $aParams, $aViewsChain);
     }
