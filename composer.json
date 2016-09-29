@@ -1,0 +1,17 @@
+{
+  "name": "marm/yamm",
+  "type": "oxid-module",
+  "require-dev": {
+    "phpunit/phpunit": "^4.0",
+    "pdepend/pdepend": "@stable",
+    "phpmd/phpmd": "@stable",
+    "squizlabs/php_codesniffer": "@stable"
+  },
+  "autoload": {
+    "classmap": ["src/"]
+  },
+  "require": {
+    "pimple/pimple": "@stable",
+    "kore/data-object": "@stable"
+  }
+}

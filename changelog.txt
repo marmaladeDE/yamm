@@ -1,0 +1,6 @@
+YAMM CHANGELOG
+==============
+
+version 1.0.0
+-------------
+Initial release with common DIC
