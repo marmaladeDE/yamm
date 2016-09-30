@@ -28,16 +28,14 @@ class DIC extends \Pimple\Container
         return self::$instance;
     }
 
-    public function findOtherModules($moduleDirectory)
+    public function findOtherModules($moduleDirectory, $modules)
     {
-        $dicIncludeFiles = array_filter(array_merge(
-            glob($moduleDirectory . '/*/dic.php'),
-            glob($moduleDirectory . '/*/*/dic.php')
-        ));
-
         $dic = $this;
-        foreach ($dicIncludeFiles as $dicIncludeFile) {
-            include $dicIncludeFile;
+        foreach ($modules as $name => $path) {
+            $dicFileName = $moduleDirectory . '/' . $path . '/dic.php';
+            if (file_exists($dicFileName)) {
+                include $dicFileName;
+            }
         }
     }
 
