@@ -25,11 +25,7 @@ class marm_yamm_oxshopcontrol extends marm_yamm_oxshopcontrol_parent
      */
     public function start($sClass = null, $sFunction = null, $aParams = null, $aViewsChain = null)
     {
-        require_once __DIR__ . '/../../../vendor/autoload.php';
-
-        $dic = \Marm\Yamm\DIC::getInstance();
-        $dic->findOtherModules(\oxRegistry::getConfig()->getConfigParam('sShopDir') . 'modules/');
-        oxRegistry::set('yamm_dic', $dic);
+        require_once __DIR__ . '/../bootstrap.php';
 
         parent::start($sClass, $sFunction, $aParams, $aViewsChain);
     }

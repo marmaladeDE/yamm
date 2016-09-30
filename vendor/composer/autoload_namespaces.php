@@ -6,8 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Prophecy\\' => array($vendorDir . '/phpspec/prophecy/src'),
     'Pimple' => array($vendorDir . '/pimple/pimple/src'),
-    'PHPMD\\' => array($vendorDir . '/phpmd/phpmd/src/main/php'),
     'Kore' => array($vendorDir . '/kore/data-object/src'),
 );
