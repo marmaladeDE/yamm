@@ -27,10 +27,7 @@ $aModule = array(
     'url'         => 'http://www.marmalade.de',
     'email'       => 'support@marmalade.de',
     'extend'      => array(
-        'oxshopcontrol' => 'marm/yamm/ma_yamm_shopcontrol',
-    ),
-    'files'       => array(
-        'ma_yamm_shopcontrol' => 'marm/yamm/src/oxid/core/ma_yamm_shopcontrol.php',
+        'oxshopcontrol' => 'marm/yamm/src/oxid/core/marm_yamm_oxshopcontrol',
     ),
     'templates'   => array(),
     'blocks'      => array(),

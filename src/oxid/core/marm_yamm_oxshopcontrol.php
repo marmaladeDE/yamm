@@ -12,7 +12,7 @@
 /**
  * @extends oxshopcontrol
  */
-class ma_yamm_shopcontrol extends ma_yamm_shopcontrol_parent
+class marm_yamm_oxshopcontrol extends marm_yamm_oxshopcontrol_parent
 {
     /**
      * Start
