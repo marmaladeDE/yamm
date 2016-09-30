@@ -1,4 +1,13 @@
 <?php
+/**
+ * This file is part of a marmalade GmbH project
+ *
+ * It is Open Source and may be redistributed as long as you keep the notice.
+ * For contact information please visit http://www.marmalade.de
+ *
+ * Author URI: http://www.marmalade.de
+ */
+
 
 namespace Marm\Yamm;
 

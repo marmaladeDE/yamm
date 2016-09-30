@@ -45,3 +45,10 @@ $dic['acme_module_aggregator'] = function ($dic) {
 
 YAMM is released under MIT.
 
+Use this module in your project but keep the author notice. Thank you!
+
+
+## Authors ##
+* [Kore Nordmann](https://qafoo.com)
+* [Joscha Krug](http://www.marmalade.de)
+

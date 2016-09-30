@@ -2,10 +2,9 @@
 /**
  * This file is part of a marmalade GmbH project
  *
- * It is not Open Source and may not be redistributed.
+ * It is Open Source and may be redistributed as long as you keep the notice.
  * For contact information please visit http://www.marmalade.de
  *
- * Version:    1.0
  * Author URI: http://www.marmalade.de
  */
 
