@@ -10,7 +10,7 @@ This meta module provides generally desired functionality, like:
 
 ### DIC Usage ###
 
-The DIC is am extension of [Pimple](http://pimple.sensiolabs.org/) which allows
+The DIC is an extension of [Pimple](http://pimple.sensiolabs.org/) which allows
 service tagging and is integrated with Oxid eSales.
 
 To use the DIC just put a `dic.php` in the root of yourproject and register all
@@ -18,7 +18,8 @@ your services in there. A variable `$dic` will be available in this fileyou can
 operate with:
 
 ```
-$dic['acme_module_service'] = function ($dic) {
+/** @var \Marm\Yamm\DIC $dic */
+$dic['acme_module_service'] = function (\Marm\Yamm\DIC $dic) {
     return new Acme\Module\Service(/* ... */);
 };
 ```
@@ -27,18 +28,26 @@ On top of that we allow tagging of services and receiving of all services which
 are tagged with a defined tag when constructing services:
 
 ```
+/** @var \Marm\Yamm\DIC $dic */
 $dic->tag('acme_module_service', 'acme:tag');
-$dic['acme_module_service'] = function ($dic) {
+$dic['acme_module_service'] = function (\Marm\Yamm\DIC $dic) {
     return new Acme\Module\Service(/* ... */);
 };
 
 // Somewhere else or later
-$dic['acme_module_aggregator'] = function ($dic) {
+$dic['acme_module_aggregator'] = function (\Marm\Yamm\DIC $dic) {
     return new Acme\Module\Aggregator(
         // Array of all services tagged with "acme:tag"
         $dic->getTagged('acme:tag')
     );
 };
+```
+
+To get the DIC anywhere else in your project, just fetch it from `oxRegistry`:
+
+```
+/** @var \Marm\Yamm\DIC $dic */
+$dic = oxRegistry::get('yamm_dic');
 ```
 
 ### Licence Terms ###
