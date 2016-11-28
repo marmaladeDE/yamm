@@ -10,6 +10,9 @@
   "autoload": {
     "classmap": ["src/"]
   },
+  "extra": {
+    "installer-name": "marm/yamm"
+  },
   "require": {
     "pimple/pimple": "@stable",
     "kore/data-object": "@stable"
