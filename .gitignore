@@ -9,3 +9,4 @@ vendor/sebastian/
 vendor/squizlabs/
 vendor/symfony/
 vendor/webmozart/
+.idea
