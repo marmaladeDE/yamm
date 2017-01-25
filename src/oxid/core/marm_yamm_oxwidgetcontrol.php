@@ -18,29 +18,25 @@
  * Author URI: http://www.marmalade.de
  */
 
-/**
- * Metadata version
- */
-$sMetadataVersion = '1.1';
 
 /**
- * Module information
+ * @extends oxwidgetcontrol
  */
-$aModule = array(
-    'id'          => 'marm/yamm',
-    'title'       => 'marmalade :: YAMM',
-    'description' => 'Yet Another Meta Module',
-    'thumbnail'   => 'marmalade.jpg',
-    'version'     => '1.0.0',
-    'author'      => 'marmalade GmbH',
-    'url'         => 'http://www.marmalade.de',
-    'email'       => 'support@marmalade.de',
-    'extend'      => array(
-        'oxshopcontrol' => 'marm/yamm/src/oxid/core/marm_yamm_oxshopcontrol',
-        'oxwidgetcontrol' => 'marm/yamm/src/oxid/core/marm_yamm_oxwidgetcontrol',
-    ),
-    'templates'   => array(),
-    'blocks'      => array(),
-    'events'      => array(),
-    'settings'    => array(),
-);
+class marm_yamm_oxwidgetcontrol extends marm_yamm_oxwidgetcontrol_parent
+{
+    /**
+     * Start
+     *
+     * @param string $sClass
+     * @param string $sFunction
+     * @param array $aParams
+     * @param array $aViewsChain
+     * @return void
+     */
+    public function start($sClass = null, $sFunction = null, $aParams = null, $aViewsChain = null)
+    {
+        require_once __DIR__ . '/../bootstrap.php';
+
+        parent::start($sClass, $sFunction, $aParams, $aViewsChain);
+    }
+}
