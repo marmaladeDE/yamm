@@ -26,7 +26,10 @@ if(!function_exists('oxNew'))
 require_once __DIR__ . '/../../vendor/autoload.php';
 
 $dic = \Marm\Yamm\DIC::getInstance();
-$moduleList = oxNew('oxModuleList');
-$dic->findOtherModules(\oxRegistry::getConfig()->getModulesDir(), $moduleList->getActiveModuleInfo());
-oxRegistry::set('yamm_dic', $dic);
+
+if (!$dic->isInitialized()) {
+    $moduleList = oxNew('oxModuleList');
+    $dic->findOtherModules(\oxRegistry::getConfig()->getModulesDir(), $moduleList->getActiveModuleInfo());
+    oxRegistry::set('yamm_dic', $dic);
+}
 

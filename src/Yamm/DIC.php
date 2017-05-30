@@ -29,6 +29,8 @@ class DIC extends \Pimple\Container
 
     private $tags = array();
 
+    private $isInitialized = false;
+
     public static function getInstance()
     {
         if (!self::$instance) {
@@ -36,6 +38,11 @@ class DIC extends \Pimple\Container
         }
 
         return self::$instance;
+    }
+
+    public function isInitialized()
+    {
+        return $this->isInitialized;
     }
 
     public function findOtherModules($moduleDirectory, $modules)
@@ -47,6 +54,7 @@ class DIC extends \Pimple\Container
                 include $dicFileName;
             }
         }
+        $this->isInitialized = true;
     }
 
     public function tag($serviceName, $tagName)
