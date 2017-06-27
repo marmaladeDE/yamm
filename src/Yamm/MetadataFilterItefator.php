@@ -11,12 +11,20 @@
 
 namespace Marm\Yamm;
 
-class MetadataFilterIterator extends \FilterIterator {
+class MetadataFilterIterator extends \FilterIterator
+{
     public function accept()
     {
         /** @var \SplFileInfo $current */
-        $current = $this->current();
-        return fnmatch('metadata.php', $current->getBasename());
+        $current    = $this->current();
+        $hasDicFile = false;
+
+        if (fnmatch('metadata.php', $current->getBasename())) {
+            $baseDir    = dirname($current->getRealPath());
+            $hasDicFile = file_exists("{$baseDir}/dic.php");
+        }
+
+        return $hasDicFile;
     }
 
 }
