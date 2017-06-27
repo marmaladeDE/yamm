@@ -56,6 +56,6 @@ class DICBuilder
             iterator_to_array($filterIterator)
         );
 
-        return $filesToAdd;
+        return array_values($filesToAdd);
     }
 }
