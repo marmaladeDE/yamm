@@ -25,37 +25,7 @@ namespace Marm\Yamm;
  */
 class DIC extends \Pimple\Container
 {
-    private static $instance;
-
     private $tags = array();
-
-    private $isInitialized = false;
-
-    public static function getInstance()
-    {
-        if (!self::$instance) {
-            self::$instance = new static();
-        }
-
-        return self::$instance;
-    }
-
-    public function isInitialized()
-    {
-        return $this->isInitialized;
-    }
-
-    public function findOtherModules($moduleDirectory, $modules)
-    {
-        $dic = $this;
-        foreach ($modules as $name => $path) {
-            $dicFileName = $moduleDirectory . '/' . $path . '/dic.php';
-            if (file_exists($dicFileName)) {
-                include $dicFileName;
-            }
-        }
-        $this->isInitialized = true;
-    }
 
     public function tag($serviceName, $tagName)
     {
