@@ -25,7 +25,10 @@ class ComposerStaticInitbee5c02d239532a04767203313faf56f
 
     public static $classMap = array (
         'Marm\\Yamm\\DIC' => __DIR__ . '/../..' . '/src/Yamm/DIC.php',
+        'Marm\\Yamm\\DICBuilder' => __DIR__ . '/../..' . '/src/Yamm/DICBuilder.php',
+        'Marm\\Yamm\\MetadataFilterIterator' => __DIR__ . '/../..' . '/src/Yamm/MetadataFilterIterator.php',
         'marm_yamm_oxshopcontrol' => __DIR__ . '/../..' . '/src/oxid/core/marm_yamm_oxshopcontrol.php',
+        'marm_yamm_oxwidgetcontrol' => __DIR__ . '/../..' . '/src/oxid/core/marm_yamm_oxwidgetcontrol.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
