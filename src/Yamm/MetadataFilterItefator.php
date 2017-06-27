@@ -26,5 +26,4 @@ class MetadataFilterIterator extends \FilterIterator
 
         return $hasDicFile;
     }
-
 }
