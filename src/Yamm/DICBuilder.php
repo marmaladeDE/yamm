@@ -51,7 +51,7 @@ class DICBuilder
         $filesToAdd = array_map(
             function ($element) {
                 /** @var $element \SplFileInfo */
-                return $element->getRealPath();
+                return dirname($element->getRealPath()) . "/dic.php";
             },
             iterator_to_array($filterIterator)
         );
