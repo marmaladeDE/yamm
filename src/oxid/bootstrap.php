@@ -18,6 +18,8 @@
  * Author URI: http://www.marmalade.de
  */
 
+use Marm\Yamm\DICBuilder;
+
 if(!function_exists('oxNew'))
 {
     require_once __DIR__ . '/../../../../../bootstrap.php';
@@ -25,11 +27,28 @@ if(!function_exists('oxNew'))
 
 require_once __DIR__ . '/../../vendor/autoload.php';
 
-$dic = \Marm\Yamm\DIC::getInstance();
+$moduleDirectory = realpath(__DIR__ . '/../../../../');
+$shopRoot = realpath("{$moduleDirectory}/..");
 
-if (!$dic->isInitialized()) {
-    $moduleList = oxNew('oxModuleList');
-    $dic->findOtherModules(\oxRegistry::getConfig()->getModulesDir(), $moduleList->getActiveModuleInfo());
-    oxRegistry::set('yamm_dic', $dic);
+$cacheFile = "{$shopRoot}/tmp/yamm-dic.dic-files.cache";
+
+$dicFiles = null;
+if (file_exists($cacheFile)) {
+    $dicFiles = unserialize(file_get_contents($cacheFile));
 }
 
+if (null === $dicFiles) {
+    $dicFiles = [];
+
+    if (file_exists($shopDicFile = "{$shopRoot}/dic.php")) {
+        $dicFiles[] = $shopDicFile;
+    }
+
+    $dicFiles = array_merge($dicFiles, DICBuilder::findDICFiles($moduleDirectory));
+
+    file_put_contents($cacheFile, serialize($dicFiles));
+}
+
+$dic = DICBuilder::getContainer($dicFiles);
+
+oxRegistry::set('yamm_dic', $dic);
