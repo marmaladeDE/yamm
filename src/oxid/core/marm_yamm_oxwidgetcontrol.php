@@ -33,10 +33,12 @@ class marm_yamm_oxwidgetcontrol extends marm_yamm_oxwidgetcontrol_parent
      * @param array $aViewsChain
      * @return void
      */
+    /* We don't need this overwrite anymore
     public function start($sClass = null, $sFunction = null, $aParams = null, $aViewsChain = null)
     {
         require_once __DIR__ . '/../bootstrap.php';
 
         parent::start($sClass, $sFunction, $aParams, $aViewsChain);
     }
+    */
 }
