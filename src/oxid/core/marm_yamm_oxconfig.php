@@ -10,9 +10,12 @@
 
 class marm_yamm_oxconfig extends marm_yamm_oxconfig_parent
 {
-    protected function _setDefaults()
+    public function init()
     {
-        parent::_setDefaults();
+        if ($this->_blInit) {
+            return;
+        }
+        parent::init();
         include_once __DIR__ . '/../bootstrap.php';
     }
 }
