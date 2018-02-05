@@ -10,12 +10,9 @@
 
 class marm_yamm_oxconfig extends marm_yamm_oxconfig_parent
 {
-    public function init()
+    public function _processSeoCall()
     {
-        if ($this->_blInit) {
-            return;
-        }
-        parent::init();
         include_once __DIR__ . '/../bootstrap.php';
+        parent::_processSeoCall();
     }
 }
