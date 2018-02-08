@@ -27,13 +27,16 @@ class DIC extends \Pimple\Container
 {
     private $tags = array();
 
-    public function tag($serviceName, $tagName)
+    public function tag($serviceName, $tagName, $priority = 0)
     {
         if (!isset($this->tags[$tagName])) {
             $this->tags[$tagName] = array();
         }
 
-        $this->tags[$tagName][] = $serviceName;
+        $this->tags[$tagName][] = [
+            'name'     => $serviceName,
+            'priority' => (int) $priority,
+        ];
     }
 
     public function getTagged($tagName)
@@ -42,12 +45,19 @@ class DIC extends \Pimple\Container
             return array();
         }
 
-        $dic = $this;
-        return array_map(
-            function ($serviceName) use ($dic) {
-                return $this[$serviceName];
-            },
-            $this->tags[$tagName]
+        $services = [];
+
+        $taggedServices = $this->tags[$tagName];
+        usort(
+            $taggedServices,
+            function ($a, $b) {
+                return $b['priority'] - $a['priority'];
+            }
         );
+        foreach ($taggedServices as $service) {
+            $services[$service['name']] = $this[$service['name']];
+        }
+
+        return $services;
     }
 }
