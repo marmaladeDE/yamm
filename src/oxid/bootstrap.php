@@ -27,10 +27,10 @@ if(!function_exists('oxNew'))
 
 require_once __DIR__ . '/../../vendor/autoload.php';
 
-$moduleDirectory = realpath(__DIR__ . '/../../../../');
-$shopRoot = realpath("{$moduleDirectory}/..");
+$shopRoot = OX_BASE_PATH;
+$moduleDirectory = "{$shopRoot}modules";
 
-$cacheFile = "{$shopRoot}/tmp/yamm-dic.dic-files.cache";
+$cacheFile = $cacheFile = oxRegistry::getConfig()->getConfigParam('sCompileDir') . 'yamm-dic.dic-files.cache';
 
 $dicFiles = null;
 if (file_exists($cacheFile)) {
@@ -40,7 +40,7 @@ if (file_exists($cacheFile)) {
 if (null === $dicFiles) {
     $dicFiles = [];
 
-    if (file_exists($shopDicFile = "{$shopRoot}/dic.php")) {
+    if (file_exists($shopDicFile = "{$shopRoot}dic.php")) {
         $dicFiles[] = $shopDicFile;
     }
 
