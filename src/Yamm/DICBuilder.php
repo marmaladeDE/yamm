@@ -46,6 +46,7 @@ class DICBuilder
     {
         $directoryIterator = new \RecursiveDirectoryIterator($moduleDirectory);
         $recursiveIterator = new \RecursiveIteratorIterator($directoryIterator);
+        $recursiveIterator->setMaxDepth(2);
         $filterIterator    = new MetadataFilterIterator($recursiveIterator);
 
         $filesToAdd = array_map(
