@@ -9,6 +9,5 @@ return array(
     'Marm\\Yamm\\DIC' => $baseDir . '/src/Yamm/DIC.php',
     'Marm\\Yamm\\DICBuilder' => $baseDir . '/src/Yamm/DICBuilder.php',
     'Marm\\Yamm\\MetadataFilterIterator' => $baseDir . '/src/Yamm/MetadataFilterIterator.php',
-    'marm_yamm_oxshopcontrol' => $baseDir . '/src/oxid/core/marm_yamm_oxshopcontrol.php',
-    'marm_yamm_oxwidgetcontrol' => $baseDir . '/src/oxid/core/marm_yamm_oxwidgetcontrol.php',
+    'Marmalade\\Yamm\\Config' => $baseDir . '/src/oxid/core/Config.php',
 );
