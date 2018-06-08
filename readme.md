@@ -1,5 +1,10 @@
 # YAMM :: Yet Another Meta Module # 
 
+## Requirements ##
+
+**Important:** This module is for OXID eShop 6.0 and newer only. If you have an older OXID eShop version
+use the latest module version 1.x. 
+
 ## English ##
 
 This meta module provides generally desired functionality, like:

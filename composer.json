@@ -9,13 +9,15 @@
     "squizlabs/php_codesniffer": "@stable"
   },
   "autoload": {
-    "classmap": ["src/"]
+    "classmap": ["src/"],
+    "psr-4": {
+      "Marmalade\\Yamm\\": ["src/oxid/core/"]
+    }
   },
   "extra": {
     "installer-name": "marm/yamm"
   },
   "require": {
-    "pimple/pimple": "@stable",
-    "kore/data-object": "@stable"
+    "pimple/pimple": "@stable"
   }
 }

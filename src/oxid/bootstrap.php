@@ -19,6 +19,7 @@
  */
 
 use Marm\Yamm\DICBuilder;
+use OxidEsales\Eshop\Core\Registry;
 
 if(!function_exists('oxNew'))
 {
@@ -30,7 +31,7 @@ require_once __DIR__ . '/../../vendor/autoload.php';
 $shopRoot = OX_BASE_PATH;
 $moduleDirectory = "{$shopRoot}modules";
 
-$cacheFile = $cacheFile = oxRegistry::getConfig()->getConfigParam('sCompileDir') . 'yamm-dic.dic-files.cache';
+$cacheFile = $cacheFile = Registry::getConfig()->getConfigParam('sCompileDir') . 'yamm-dic.dic-files.cache';
 
 $dicFiles = null;
 if (file_exists($cacheFile)) {
@@ -51,4 +52,4 @@ if (null === $dicFiles) {
 
 $dic = DICBuilder::getContainer($dicFiles);
 
-oxRegistry::set('yamm_dic', $dic);
+Registry::set('yamm_dic', $dic);

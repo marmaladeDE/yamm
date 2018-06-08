@@ -8,11 +8,13 @@
  * Author URI: http://www.marmalade.de
  */
 
-class marm_yamm_oxconfig extends marm_yamm_oxconfig_parent
+namespace Marmalade\Yamm;
+
+class Config extends Config_parent
 {
-    public function _processSeoCall()
+    public function initializeShop(): void
     {
         include_once __DIR__ . '/../bootstrap.php';
-        parent::_processSeoCall();
+        parent::initializeShop();
     }
 }
