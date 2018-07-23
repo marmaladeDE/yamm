@@ -12,7 +12,7 @@ namespace Marmalade\Yamm;
 
 class Config extends Config_parent
 {
-    public function initializeShop(): void
+    public function initializeShop()
     {
         include_once __DIR__ . '/../bootstrap.php';
         parent::initializeShop();
