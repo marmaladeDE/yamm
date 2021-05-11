@@ -7,5 +7,6 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Pimple' => array($vendorDir . '/pimple/pimple/src'),
+    'PHPMD\\' => array($vendorDir . '/phpmd/phpmd/src/main/php'),
     'Kore' => array($vendorDir . '/kore/data-object/src'),
 );

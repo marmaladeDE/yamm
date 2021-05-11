@@ -8,12 +8,23 @@ class DataObject
      * Generic constructor
      *
      * @param array $values
+     * @param bool $ignoreAdditionalAttributes (optional) When set to true,
+     *  additional attributes in $values will be ignored while construction.
+     *  Defaults to false
      * @return void
      */
-    public function __construct(array $values = array())
+    public function __construct(array $values = array(), bool $ignoreAdditionalAttributes = false)
     {
         foreach ($values as $name => $value) {
-            $this->$name = $value;
+            if ($ignoreAdditionalAttributes) {
+                try {
+                    $this->$name = $value;
+                } catch (\OutOfRangeException $e) {
+                    // Ignore this property
+                }
+            } else {
+                $this->$name = $value;
+            }
         }
     }
 
@@ -58,7 +69,7 @@ class DataObject
      */
     public function __clone()
     {
-        foreach ($this as $property => $value) {
+        foreach (get_object_vars($this) as $property => $value) {
             if (is_object($value)) {
                 $this->$property = clone $value;
             }

@@ -16,6 +16,9 @@
   },
   "require": {
     "pimple/pimple": "@stable",
-    "kore/data-object": "@stable"
+    "kore/data-object": "@stable",
+    "symfony/dependency-injection": "^3.4.26",
+    "symfony/yaml": "^3.4",
+    "symfony/config": "^3.4"
   }
 }
